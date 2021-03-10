@@ -6,9 +6,12 @@ import java.util.Arrays;
 
 import shap4j.TreeExplainer;
 
-class ExampleApp {
+public class ExampleApp {
     public static void main(String[] args) throws Exception {
-        byte[] data = Files.readAllBytes(new File("C:\\Lang\\Java\\javacpp\\shap4jSampleCall\\src\\main\\java\\examples\\boston.shap4j").toPath());
+        //"/home/stats/shap4jSampleCall/src/main/java/examples/boston.shap4j"
+
+        String fileName = args[0];
+        byte[] data = Files.readAllBytes(new File(fileName).toPath());
         TreeExplainer explainer = new TreeExplainer(data);
         double[] x = {
                 6.320e-03, 1.800e+01, 2.310e+00, 0.000e+00, 5.380e-01, 6.575e+00,

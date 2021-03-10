@@ -24,6 +24,11 @@
 <!--            <artifactId>shap4j-platform</artifactId>-->
 <!--            <version>0.0.3-SNAPSHOT</version>-->
 <!--        </dependency>-->
+       <dependency>
+           <groupId>io.github.xydrolase</groupId>
+           <artifactId>shap4j</artifactId>
+           <version>0.0.2</version>
+       </dependency>
         <dependency>
             <groupId>io.github.xydrolase</groupId>
             <artifactId>shap4j-platform</artifactId>
@@ -65,6 +70,18 @@
                     </execution>
                 </executions>
 
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>fully.qualified.MainClass</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
             </plugin>
         </plugins>
     </build>
